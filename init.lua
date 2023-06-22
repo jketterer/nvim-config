@@ -152,6 +152,9 @@ local plugins = {
 			})
 		end,
 	},
+	{
+		"fladson/vim-kitty",
+	},
 }
 
 require("lazy").setup(plugins)
