@@ -14,3 +14,6 @@ map_key("", "<right>", "<nop>")
 -- Escape key is hard
 map_key("i", "kj", "<ESC>")
 map_key("v", "kj", "<ESC>")
+
+-- Diagnostics
+vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float)

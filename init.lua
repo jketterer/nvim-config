@@ -1,7 +1,7 @@
 require("config.options")
 require("config.mappings")
 
--- [[ PLUGINS ]]
+-- [[ PLUGIN LOADER ]]
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -20,3 +20,4 @@ require("lazy").setup(plugins)
 
 require("config.which")
 require("config.colors")
+require("config.lsp")
