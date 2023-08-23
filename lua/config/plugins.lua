@@ -30,7 +30,18 @@ local plugins = {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.1",
-        dependencies = "nvim-lua/plenary.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-ui-select.nvim",
+        },
+        opts = {
+            extensions = { "ui-select", "flutter" }
+        },
+        config = function(_, opts)
+            require("telescope").load_extension("ui-select")
+			require("telescope").load_extension("flutter")
+            require("telescope").setup(opts)
+        end,
     },
     {
         "ggandor/leap.nvim",
@@ -79,6 +90,53 @@ local plugins = {
             "neovim/nvim-lspconfig",
         },
         config = true,
+    },
+    {
+        "akinsho/flutter-tools.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+        lazy = false,
+        config = true,
+    },
+    {
+        "nmac427/guess-indent.nvim",
+        config = true,
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "dcampos/nvim-snippy",
+        },
+        config = function()
+            local cmp = require("cmp")
+            cmp.setup({
+                mapping = cmp.mapping.preset.insert({
+                    ['<C-p'] = cmp.mapping.scroll_docs(-4), -- Up
+                    ['<C-n'] = cmp.mapping.scroll_docs(4), -- Down
+                    ['<C-Space'] = cmp.mapping.complete(),
+                    ['<CR>'] = cmp.mapping.confirm {
+                        behavior = cmp.ConfirmBehavior.Replace,
+                        select = true,
+                    },
+                    ['<Tab>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                }),
+                snippet = {
+                    expand = function(args)
+                        require("snippy").expand_snippet(args.body)
+                    end
+                },
+                sources = {
+                    { name = "nvim_lsp" },
+                    { name = "snippy" },
+                },
+            })
+        end
     },
 }
 

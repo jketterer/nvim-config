@@ -9,12 +9,24 @@ require("which-key").register({
         },
         c = {
             name = "code",
-            f = "Format",
             a = "Code actions",
+            f = "Format",
+			r = "Rename symbol",
         },
         d = {
             name = "diagnostics",
-            o = { vim.diagnostic.open_float, "Open float" },
-        }
+            o = "Open float",
+        },
+		g = {
+			name = "+goto",
+			D = "Declaration",
+			d = "Definition",
+			i = "Implementation",
+			r = "References",
+		},
+		t = {
+			name = "+tools",
+			f = { "<cmd>Telescope flutter commands<cr>", "Flutter" },
+		},
     },
 })
