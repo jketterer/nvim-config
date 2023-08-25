@@ -15,9 +15,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = require("config.plugins")
+local plugins = require("config.plugins.list")
 require("lazy").setup(plugins)
 
 require("config.which")
-require("config.colors")
+require("config.colorscheme")
 require("config.lsp")
