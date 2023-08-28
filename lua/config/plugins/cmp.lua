@@ -10,18 +10,10 @@ local cmp = {
             mapping = cmp.mapping.preset.insert({
                 ['<C-p'] = cmp.mapping.scroll_docs(-4), -- Up
                 ['<C-n'] = cmp.mapping.scroll_docs(4),  -- Down
-                ['<C-Space'] = cmp.mapping.complete(),
-                ['<CR>'] = cmp.mapping.confirm {
+                ['<Tab>'] = cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Replace,
-                    select = true,
+                    select = true, -- accept first item if none selected
                 },
-                ['<Tab>'] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
             }),
             snippet = {
                 expand = function(args)
