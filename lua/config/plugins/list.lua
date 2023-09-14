@@ -27,22 +27,17 @@ local plugins = {
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-    },
-    {
-        "goolord/alpha-nvim",
-        config = function()
-            local dashboard = require("alpha.themes.dashboard").config
-            require("alpha").setup(dashboard)
-        end
     }
 }
 
 local pluginLoader = require("config.plugins.pluginloader")
 
+pluginLoader.apply(plugins, require("config.plugins.alpha"))
 pluginLoader.apply(plugins, require("config.plugins.cmp"))
 pluginLoader.apply(plugins, require("config.plugins.comment"))
 pluginLoader.apply(plugins, require("config.plugins.leap"))
 pluginLoader.apply(plugins, require("config.plugins.neotree"))
+pluginLoader.apply(plugins, require("config.plugins.notify"))
 pluginLoader.apply(plugins, require("config.plugins.telescope"))
 
 pluginLoader.applyIfCommandExists("flutter", plugins, require("config.plugins.flutter"))
