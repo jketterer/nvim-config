@@ -35,7 +35,6 @@ pluginLoader.apply(plugins, require("config.plugins.alpha"))
 pluginLoader.apply(plugins, require("config.plugins.autopairs"))
 pluginLoader.apply(plugins, require("config.plugins.cmp"))
 pluginLoader.apply(plugins, require("config.plugins.comment"))
-pluginLoader.apply(plugins, require("config.plugins.lazygit"))
 pluginLoader.apply(plugins, require("config.plugins.leap"))
 pluginLoader.apply(plugins, require("config.plugins.mason"))
 pluginLoader.apply(plugins, require("config.plugins.neotree"))
@@ -45,5 +44,6 @@ pluginLoader.apply(plugins, require("config.plugins.trouble"))
 
 pluginLoader.applyIfCommandExists("flutter", plugins, require("config.plugins.flutter"))
 pluginLoader.applyIfCommandExists("gcc", plugins, require("config.plugins.treesitter"))
+pluginLoader.applyIfCommandExists("lazygit", plugins, require("config.plugins.lazygit"))
 
 return plugins
