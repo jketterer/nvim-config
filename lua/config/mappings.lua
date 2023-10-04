@@ -17,3 +17,5 @@ map_key("v", "kj", "<ESC>")
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>dl", vim.diagnostic.goto_prev)

@@ -1,11 +1,13 @@
 -- [[ WHICH KEY MAPPINGS ]]
 require("which-key").register({
+    K = "LSP Hover",
+    ["<C-k>"] = "LSP Signature Help",
     ["<leader>"] = {
         f = {
             name = "+find",
-            f = { "<cmd>Telescope find_files<cr>", "Find file" },
-            g = { "<cmd>Telescope live_grep<cr>", "Find text (live grep)" },
             b = { "<cmd>Telescope buffers<cr>", "Find buffer" },
+            f = { "<cmd>Telescope find_files<cr>", "Find file" },
+            g = { "<cmd>Telescope live_grep<cr>", "Find text (ripgrep)" },
         },
         c = {
             name = "code",
@@ -15,12 +17,14 @@ require("which-key").register({
         },
         d = {
             name = "diagnostics",
+            l = "Goto previous",
+            n = "Goto next",
             o = "Open float",
         },
 		g = {
 			name = "+goto",
-			D = "Declaration",
 			d = "Definition",
+			D = "Declaration",
 			i = "Implementation",
 			r = "References",
 		},
