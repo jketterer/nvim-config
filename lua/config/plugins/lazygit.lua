@@ -4,7 +4,7 @@ local plugin = {
         "nvim-lua/plenary.nvim",
     },
     keys = {
-        { "<leader>tg", "<cmd>LazyGit<cr>", desc = "Lazygit" },
+        { "<leader>tg", "<cmd>LazyGit<cr>", desc = "lazygit" },
     }
 }
 

@@ -30,7 +30,7 @@ require("which-key").register({
 		},
 		t = {
 			name = "+tools",
-			f = { "<cmd>Telescope flutter commands<cr>", "Flutter" },
+            l = { "<cmd>Lazy<cr>", "lazy.nvim" },
 		},
     },
 })
