@@ -3,7 +3,6 @@ local plugins = {
     { "neovim/nvim-lspconfig" },
     { "RRethy/vim-illuminate" },
     { "nmac427/guess-indent.nvim", config = true },
-    { "williamboman/mason.nvim",   config = true },
     {
         "ellisonleao/gruvbox.nvim",
         opts = { contrast = "soft" },
@@ -38,6 +37,7 @@ pluginLoader.apply(plugins, require("config.plugins.cmp"))
 pluginLoader.apply(plugins, require("config.plugins.comment"))
 pluginLoader.apply(plugins, require("config.plugins.lazygit"))
 pluginLoader.apply(plugins, require("config.plugins.leap"))
+pluginLoader.apply(plugins, require("config.plugins.mason"))
 pluginLoader.apply(plugins, require("config.plugins.neotree"))
 pluginLoader.apply(plugins, require("config.plugins.notify"))
 pluginLoader.apply(plugins, require("config.plugins.telescope"))
