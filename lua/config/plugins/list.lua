@@ -2,6 +2,7 @@ local plugins = {
     { "fladson/vim-kitty" },
     { "neovim/nvim-lspconfig" },
     { "m4xshen/autoclose.nvim",    config = true },
+    { "RRethy/vim-illuminate" },
     { "nmac427/guess-indent.nvim", config = true },
     { "williamboman/mason.nvim",   config = true },
     {
