@@ -12,6 +12,7 @@ local plugins = {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = "kyazdani42/nvim-web-devicons",
+        dependencies = "nvim-tree/nvim-web-devicons",
         config = true,
     },
     {
@@ -40,6 +41,7 @@ pluginLoader.apply(plugins, require("config.plugins.leap"))
 pluginLoader.apply(plugins, require("config.plugins.neotree"))
 pluginLoader.apply(plugins, require("config.plugins.notify"))
 pluginLoader.apply(plugins, require("config.plugins.telescope"))
+pluginLoader.apply(plugins, require("config.plugins.trouble"))
 
 pluginLoader.applyIfCommandExists("flutter", plugins, require("config.plugins.flutter"))
 pluginLoader.applyIfCommandExists("gcc", plugins, require("config.plugins.treesitter"))
