@@ -20,6 +20,6 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 vim.wo.number = true
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 vim.wo.signcolumn = "yes"
 vim.wo.wrap = false
