@@ -17,7 +17,6 @@ require("which-key").register({
         },
         d = {
             name = "diagnostics",
-            a = { "<cmd>TroubleToggle<cr>", "See all" },
             l = "Goto previous",
             n = "Goto next",
             o = "Open float",
