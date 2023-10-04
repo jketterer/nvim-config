@@ -4,7 +4,7 @@ local flutter = {
     lazy = false,
     config = function()
         require("flutter-tools").setup {}
-        require("telescope").load_extension("flutter")
+        require("config.plugins.telescope").load_extension("flutter")
     end
 }
 

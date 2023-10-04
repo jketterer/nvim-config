@@ -7,8 +7,6 @@ local config = function()
         dashboard.button("<SPC> E", "Close file viewer")
     }
 
-    -- vim.cmd[[autocmd User AlphaReady echo "ready"]]
-
     alpha.setup(dashboard.config)
 end
 
