@@ -1,7 +1,6 @@
 local plugins = {
     { "fladson/vim-kitty" },
     { "neovim/nvim-lspconfig" },
-    { "m4xshen/autoclose.nvim",    config = true },
     { "RRethy/vim-illuminate" },
     { "nmac427/guess-indent.nvim", config = true },
     { "williamboman/mason.nvim",   config = true },
@@ -11,7 +10,6 @@ local plugins = {
     },
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
         dependencies = "nvim-tree/nvim-web-devicons",
         config = true,
     },
@@ -35,6 +33,7 @@ local plugins = {
 local pluginLoader = require("config.plugins.pluginloader")
 
 pluginLoader.apply(plugins, require("config.plugins.alpha"))
+pluginLoader.apply(plugins, require("config.plugins.autopairs"))
 pluginLoader.apply(plugins, require("config.plugins.cmp"))
 pluginLoader.apply(plugins, require("config.plugins.comment"))
 pluginLoader.apply(plugins, require("config.plugins.leap"))
