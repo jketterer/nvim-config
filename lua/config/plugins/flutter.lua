@@ -6,7 +6,13 @@ local flutter = {
         { "<leader>tf>", "<cmd>Telescope flutter commands<cr>", "Flutter" },
     },
     config = function()
-        require("flutter-tools").setup {}
+        require("flutter-tools").setup {
+            lsp = {
+                settings = {
+                    renameFilesWithClasses = "always",
+                },
+            },
+        }
         require("config.plugins.telescope").load_extension("flutter")
     end
 }
