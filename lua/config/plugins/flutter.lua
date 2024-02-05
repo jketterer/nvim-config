@@ -3,7 +3,7 @@ local flutter = {
     dependencies = "nvim-lua/plenary.nvim",
     lazy = false,
     keys = {
-        { "<leader>tf>", "<cmd>Telescope flutter commands<cr>", "Flutter" },
+        { "<leader>tf", "<cmd>Telescope flutter commands<cr>", desc = "Flutter" },
     },
     config = function()
         require("flutter-tools").setup {
@@ -13,7 +13,7 @@ local flutter = {
                 },
             },
         }
-        require("config.plugins.telescope").load_extension("flutter")
+        require("telescope").load_extension("flutter")
     end
 }
 
