@@ -32,5 +32,8 @@ require("which-key").register({
 			name = "+tools",
             l = { "<cmd>Lazy<cr>", "lazy.nvim" },
 		},
+        h = {
+            name = "+harpoon",
+        },
     },
 })
