@@ -13,6 +13,7 @@ vim.o.hidden = true
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.bo.autoindent = true
 vim.bo.smartindent = true
+vim.o.equalalways = false
 
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
