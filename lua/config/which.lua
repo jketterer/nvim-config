@@ -2,6 +2,13 @@
 require("which-key").register({
     K = "LSP Hover",
     ["<C-k>"] = "LSP Signature Help",
+	g = {
+		name = "+goto",
+		d = "Go to definition",
+		D = "Go to declaration",
+		m = "Go to implementation",
+		r = "Go to references",
+	},
     ["<leader>"] = {
         f = {
             name = "+find",
@@ -21,13 +28,6 @@ require("which-key").register({
             n = "Goto next",
             o = "Open float",
         },
-		g = {
-			name = "+goto",
-			d = "Definition",
-			D = "Declaration",
-			i = "Implementation",
-			r = "References",
-		},
 		t = {
 			name = "+tools",
             l = { "<cmd>Lazy<cr>", "lazy.nvim" },
