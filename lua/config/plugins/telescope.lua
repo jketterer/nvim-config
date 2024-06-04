@@ -21,6 +21,7 @@ local telescope = {
         vim.keymap.set("n", "<leader>fb", t.buffers, { desc = "Find buffer" })
         vim.keymap.set("n", "<leader>ff", t.find_files, { desc = "Find file" })
         vim.keymap.set("n", "<leader>fg", t.live_grep, { desc = "Find text (ripgrep)" })
+        vim.keymap.set("n", "<leader>fr", t.oldfiles, { desc = "Find recent file" })
 
         -- Colorscheme picker
         vim.keymap.set(
