@@ -43,6 +43,7 @@ pluginLoader.apply(plugins, require("config.plugins.mason"))
 pluginLoader.apply(plugins, require("config.plugins.neotree"))
 pluginLoader.apply(plugins, require("config.plugins.notify"))
 pluginLoader.apply(plugins, require("config.plugins.telescope"))
+pluginLoader.apply(plugins, require("config.plugins.toggleterm"))
 pluginLoader.apply(plugins, require("config.plugins.trouble"))
 
 pluginLoader.applyIfCommandExists("flutter", plugins, require("config.plugins.flutter"))
