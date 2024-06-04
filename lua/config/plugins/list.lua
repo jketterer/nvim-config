@@ -19,7 +19,7 @@ local plugins = {
             "williamboman/mason.nvim",
             "neovim/nvim-lspconfig",
         },
-        config = true,
+        config = false, -- configured in lsp.lua
     },
     {
         "folke/which-key.nvim",

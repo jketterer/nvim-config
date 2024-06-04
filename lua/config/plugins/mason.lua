@@ -1,6 +1,6 @@
 local plugin = {
     "williamboman/mason.nvim",
-    opts = {},
+    config = true,
     lazy = false,
     keys = {
         { "<leader>tm", "<cmd>Mason<cr>", desc = "Mason" },
