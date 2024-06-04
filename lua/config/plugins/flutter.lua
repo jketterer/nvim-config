@@ -10,10 +10,20 @@ local flutter = {
             lsp = {
                 settings = {
                     renameFilesWithClasses = "always",
+                    updateImportsOnRename = "true",
                 },
             },
         }
+
         require("telescope").load_extension("flutter")
+
+        -- TODO: does this work?
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = { "*.dart" },
+            callback = function()
+                vim.keymap.set("n", "<leader>cr", "<cmd>FlutterRename<cr>")
+            end,
+        })
     end
 }
 

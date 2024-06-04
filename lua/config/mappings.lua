@@ -16,6 +16,6 @@ map_key("i", "kj", "<ESC>")
 map_key("v", "kj", "<ESC>")
 
 -- Diagnostics
-vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float)
-vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>dl", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float, { desc = "Open float" })
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "Go to next" })
+vim.keymap.set("n", "<leader>dl", vim.diagnostic.goto_prev, { desc = "Go to previous" })

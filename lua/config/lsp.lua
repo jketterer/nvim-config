@@ -5,11 +5,13 @@ require("mason-lspconfig").setup_handlers {
 
     ["lua_ls"] = function()
         require("lspconfig").lua_ls.setup {
-            -- Suppress "Global vim is undefined"
             settings = {
                 Lua = {
                     diagnostics = {
-                        globals = { "vim" }
+                        -- Suppress "Global vim is undefined"
+                        globals = { "vim" },
+                        -- Suppress "Same file is required under a different name"
+                        disable = { "different-requires" }
                     }
                 }
             }
@@ -22,18 +24,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(ev)
         vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-        local opts = { buffer = ev.buf }
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "gm", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+        local opts = function(description)
+            return {
+                buffer = ev.buf,
+                desc = description
+            }
+        end
+
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("Go to definition"))
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts("Go to declaration"))
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts("Go to references"))
+        vim.keymap.set("n", "gm", vim.lsp.buf.implementation, opts("Go to implementation"))
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("LSP Hover"))
+        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts("LSP Signature Help"))
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts("Code actions"))
+        vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename symbol"))
 
         vim.keymap.set("n", "<leader>cf", function()
             vim.lsp.buf.format { async = true }
-        end, opts)
+        end, opts("Format"))
     end,
 })

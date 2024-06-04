@@ -3,9 +3,9 @@ local plugin = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = true,
     keys = {
-        { "<leader>da", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Show all" },
-        { "<leader>dq", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfixes" },
-        { "<leader>gr", "<cmd>TroubleToggle lsp_references<cr>", desc = "References" },
+        { "<leader>da", "<cmd>Trouble diagnostics toggle<cr>", desc = "Show all" },
+        { "<leader>dq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfixes" },
+        { "<leader>gr", "<cmd>Trouble lsp toggle win.position=right<cr>", desc = "References" },
     },
     opts = {},
 }
