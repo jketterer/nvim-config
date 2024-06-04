@@ -2,6 +2,7 @@ local plugins = {
     { "fladson/vim-kitty" },
     { "neovim/nvim-lspconfig" },
     { "RRethy/vim-illuminate" },
+    { "folke/tokyonight.nvim" },
     { "nmac427/guess-indent.nvim", config = true },
     {
         "ellisonleao/gruvbox.nvim",
@@ -36,6 +37,7 @@ pluginLoader.apply(plugins, require("config.plugins.autopairs"))
 pluginLoader.apply(plugins, require("config.plugins.cmp"))
 pluginLoader.apply(plugins, require("config.plugins.comment"))
 pluginLoader.apply(plugins, require("config.plugins.harpoon"))
+pluginLoader.apply(plugins, require("config.plugins.highlight_undo"))
 pluginLoader.apply(plugins, require("config.plugins.leap"))
 pluginLoader.apply(plugins, require("config.plugins.mason"))
 pluginLoader.apply(plugins, require("config.plugins.neotree"))
