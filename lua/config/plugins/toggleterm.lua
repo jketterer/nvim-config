@@ -1,5 +1,6 @@
 local opts = {
     open_mapping = [[<leader>tt]],
+    insert_mappings = false,
     hide_numbers = true, -- hide number column in terminal buffers
     autochdir = false, -- change terminal dir as neovim's current dir changes
     start_in_insert = true,
