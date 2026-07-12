@@ -1,27 +1,22 @@
--- Auto-install language servers
+-- Auto-install language servers.
+-- mason-lspconfig v2 automatically enables installed servers via vim.lsp.enable,
+-- so there is no setup_handlers loop anymore.
 require("mason-lspconfig").setup { ensure_installed = { "lua_ls" } }
 
--- Configure language servers
-require("mason-lspconfig").setup_handlers {
-    function(server_name) -- default handler
-        require("lspconfig")[server_name].setup {}
-    end,
-
-    ["lua_ls"] = function()
-        require("lspconfig").lua_ls.setup {
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        -- Suppress "Global vim is undefined"
-                        globals = { "vim" },
-                        -- Suppress "Same file is required under a different name"
-                        disable = { "different-requires" }
-                    }
-                }
+-- Per-server configuration uses the native vim.lsp.config API (Neovim 0.11+).
+-- nvim-lspconfig ships the base config for each server; this merges on top.
+vim.lsp.config("lua_ls", {
+    settings = {
+        Lua = {
+            diagnostics = {
+                -- Suppress "Global vim is undefined"
+                globals = { "vim" },
+                -- Suppress "Same file is required under a different name"
+                disable = { "different-requires" }
             }
         }
-    end,
-}
+    }
+})
 
 -- Run callback after LSP attaches to buffer
 vim.api.nvim_create_autocmd("LspAttach", {
