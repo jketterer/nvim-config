@@ -21,13 +21,6 @@ local plugins = {
         },
         config = false, -- configured in lsp.lua
     },
-    {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-        end,
-    }
 }
 
 local pluginLoader = require("config.plugins.pluginloader")
@@ -45,6 +38,7 @@ pluginLoader.apply(plugins, require("config.plugins.notify"))
 pluginLoader.apply(plugins, require("config.plugins.telescope"))
 pluginLoader.apply(plugins, require("config.plugins.toggleterm"))
 pluginLoader.apply(plugins, require("config.plugins.trouble"))
+pluginLoader.apply(plugins, require("config.plugins.which"))
 
 pluginLoader.applyIfCommandExists("flutter", plugins, require("config.plugins.flutter"))
 pluginLoader.applyIfCommandExists("gcc", plugins, require("config.plugins.treesitter"))
