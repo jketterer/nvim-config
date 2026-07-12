@@ -8,8 +8,8 @@ local cmp = {
         local cmp = require("cmp")
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
-                ['<C-p'] = cmp.mapping.scroll_docs(-4), -- Up
-                ['<C-n'] = cmp.mapping.scroll_docs(4),  -- Down
+                ['<C-p>'] = cmp.mapping.select_prev_item(), -- Up
+                ['<C-n>'] = cmp.mapping.select_next_item(), -- Down
                 ['<Tab>'] = cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true, -- accept first item if none selected

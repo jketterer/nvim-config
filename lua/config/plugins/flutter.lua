@@ -10,7 +10,7 @@ local flutter = {
             lsp = {
                 settings = {
                     renameFilesWithClasses = "always",
-                    updateImportsOnRename = "true",
+                    updateImportsOnRename = true,
                 },
             },
         }
