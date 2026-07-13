@@ -1,5 +1,5 @@
 local plugin = {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = true,
     lazy = false,
     keys = {

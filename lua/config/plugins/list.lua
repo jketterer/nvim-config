@@ -14,9 +14,9 @@ local plugins = {
         config = true,
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         dependencies = {
-            "williamboman/mason.nvim",
+            "mason-org/mason.nvim",
             "neovim/nvim-lspconfig",
         },
         config = false, -- configured in lsp.lua
