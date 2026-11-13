@@ -4,6 +4,7 @@ local keys = {
     { "<leader>f",  group = "find" },
     { "<leader>g",  group = "goto" },
     { "<leader>h",  group = "harpoon" },
+    { "<leader>r",  group = "run" },
     { "<leader>t",  group = "tools" },
     { "<leader>tl", "<cmd>Lazy<cr>",      desc = "lazy.nvim", mode = "n" },
 }

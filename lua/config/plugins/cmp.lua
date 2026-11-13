@@ -22,7 +22,6 @@ local cmp = {
             },
             sources = {
                 { name = "nvim_lsp" },
-                { name = "snippy" },
             },
         })
     end

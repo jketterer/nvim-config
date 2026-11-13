@@ -9,7 +9,7 @@ local treesitter = {
     build = ":TSUpdate",
     config = function()
         -- Install parsers (async; a no-op if already present).
-        require("nvim-treesitter").install({ "lua" })
+        require("nvim-treesitter").install({ "lua", "glsl" })
 
         -- Highlighting is no longer automatic on the main branch. Start it per
         -- buffer for any filetype that has a parser installed; pcall keeps

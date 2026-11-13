@@ -9,8 +9,6 @@ vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             diagnostics = {
-                -- Suppress "Global vim is undefined"
-                globals = { "vim" },
                 -- Suppress "Same file is required under a different name"
                 disable = { "different-requires" }
             }
@@ -39,9 +37,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts("LSP Signature Help"))
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts("Code actions"))
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts("Rename symbol"))
-
-        vim.keymap.set("n", "<leader>cf", function()
-            vim.lsp.buf.format { async = true }
-        end, opts("Format"))
     end,
 })
